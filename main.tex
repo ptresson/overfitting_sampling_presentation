@@ -62,20 +62,83 @@
 \section{Overfitting}
 
 \begin{frame}{What is overfitting}
-    
-\end{frame}
-
-\begin{frame}{Common tools and intuitions}
-    
-\end{frame}
-
-\begin{frame}{Now in Machine Learning ?}
-    
-\end{frame}
-
-\begin{frame}{And in Deep Learning}
     \centering
-    How many parameters to have Shrek learning botany starting from random noise ?
+    \includegraphics[width = .8\textwidth]{./figs/overfitting-overview.png}
+    \nonumbernote{\tiny adapted from scikit-learn docs}
+\end{frame}
+
+\begin{frame}{Common tools and intuitions - Train/Test loss}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+    \centering
+    \vspace{1cm}
+    \includegraphics<1>[width = .8\textwidth]{./figs/plot/overfitting1.png}%
+    \includegraphics<2>[width = .8\textwidth]{./figs/plot/overfitting2.png}%
+    \includegraphics<3>[width = .8\textwidth]{./figs/plot/overfitting3.png}%
+    \includegraphics<4>[width = .8\textwidth]{./figs/plot/overfitting4.png}%
+    \includegraphics<5>[width = .8\textwidth]{./figs/plot/overfitting5.png}%
+    \includegraphics<6>[width = .8\textwidth]{./figs/plot/overfitting6.png}%
+    \includegraphics<7>[width = .8\textwidth]{./figs/plot/overfitting7.png}%
+    \includegraphics<8>[width = .8\textwidth]{./figs/plot/overfitting8.png}%
+    \includegraphics<9>[width = .8\textwidth]{./figs/plot/overfitting9.png}%
+        \end{column}
+        \begin{column}{.5\linewidth}
+    \centering
+    \includegraphics<1>[width = .8\textwidth]{./figs/plot/train_test_loss-1.png}%
+    \includegraphics<2>[width = .8\textwidth]{./figs/plot/train_test_loss-2.png}%
+    \includegraphics<3>[width = .8\textwidth]{./figs/plot/train_test_loss-3.png}%
+    \includegraphics<4>[width = .8\textwidth]{./figs/plot/train_test_loss-4.png}%
+    \includegraphics<5>[width = .8\textwidth]{./figs/plot/train_test_loss-5.png}%
+    \includegraphics<6>[width = .8\textwidth]{./figs/plot/train_test_loss-6.png}%
+    \includegraphics<7>[width = .8\textwidth]{./figs/plot/train_test_loss-7.png}%
+    \includegraphics<8>[width = .8\textwidth]{./figs/plot/train_test_loss-8.png}%
+    \includegraphics<9>[width = .8\textwidth]{./figs/plot/train_test_loss-9.png}%
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Common tools and intuitions - Train/Test loss}
+    \begin{figure}
+        \centering
+        \includegraphics[width = .8\textwidth]{./figs/goodfellow.png}
+        \caption{\tiny Figure from \cite{goodfellow2016deep}}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Common tools and intuitions - AIC/BIC}
+    \begin{center}
+    \textbf{Akaike information criterion (AIC)}
+
+    \textbf{Bayesian information criterion (BIC)}
+
+        Is the model parameter efficient ?
+    \end{center}
+\end{frame}
+
+\begin{frame}{Common tools and intuitions - Biases}
+    \begin{figure}
+        \centering
+        \includegraphics[width = .8\textwidth]{./figs/residuals.png}
+    \end{figure}
+    \nonumbernote{\tiny from scikit-learn docs}
+\end{frame}
+
+\begin{frame}{And in Machine(/Deep) Learning ??}
+    \centering
+    How many parameters to have\\
+    \textbf{Shrek learning botany starting from random noise ?}
+\end{frame}
+
+\begin{frame}{And in Machine(/Deep) Learning ??}
+    \centering
+        \includegraphics[width = .5\textwidth]{./figs/shrek.jpg}
+
+        $\approx 2.5B$ ?
+\end{frame}
+
+\begin{frame}{And in Machine(/Deep) Learning ??}
+    \centering
+    \textbf{Need to be very carefull on how to evaluate}
 \end{frame}
 
 \section{Common traps (in Ecology)}
