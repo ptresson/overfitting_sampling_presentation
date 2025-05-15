@@ -136,23 +136,135 @@
         $\approx 2.5B$ ?
 \end{frame}
 
-\begin{frame}{And in Machine(/Deep) Learning ??}
+\begin{frame}{Root Causes}
+    \centering
+    \only<1->{\textbf{Too many parameters}}
+
+    \only<2->{\textbf{Too little training data}}
+
+    \only<3>{\textbf{(bad) training data}}
+\end{frame}
+
+\begin{frame}{}
     \centering
     \textbf{Need to be very carefull on how to evaluate}
 \end{frame}
 
-\section{Common traps (in Ecology)}
 
-\begin{frame}{}
-    
+\section{Illustrated examples in Ecology}
+
+\begin{frame}[t]{Contraints in ecology}
+    \only<1->{Data from the real world is noisy,}%
+    \only<2->{ unbalanced,}%
+    \only<3->{ hard to collect,}%
+    \only<4->{ hard to interpret}%
+
+            \centering
+    \includegraphics<1>[width=.7\textwidth]{./figs/bouamir.png}%
+    \includegraphics<2>[width=.7\textwidth]{./figs/plantnet_longtail.png}%
+    % \only<2>{\tiny \\Distribution of species represented in plantnet dataset}
+    \includegraphics<3>[width=.3\textwidth]{./figs/climbing.png}%
+    \includegraphics<4>[width=.3\textwidth]{./figs/recapcha.png}%
+    \includegraphics<5>[width=.3\textwidth]{./figs/recapcha_plantnet.png}%
+    \includegraphics<6>[width=.3\textwidth]{./figs/recapcha_pheidole.png}%
 \end{frame}
 
 \begin{frame}{}
-    
+    \centering
+    \includegraphics<1>[width=.5\textwidth]{./figs/schemas/train.png}%
+    \includegraphics<2>[width=.5\textwidth]{./figs/schemas/good_fit.png}%
+    \includegraphics<3>[width=.5\textwidth]{./figs/schemas/good_fit_test.png}%
+    \includegraphics<4>[width=.5\textwidth]{./figs/schemas/bad_fit.png}%
+
+    \only<1>{Train set}%
+    \only<2>{\small A good fitted model}%
+    \only<3>{Test set}%
+    \only<4>{\footnotesize An overfitted model}%
 \end{frame}
 
-\begin{frame}{}
-    
+\begin{frame}{Biases in the train set}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1-2>[width=.8\textwidth]{./figs/monstera-plantnet.png}%
+    \includegraphics<3>[width=.5\textwidth]{./figs/monstera-wild.jpg}%
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1>[width=.8\textwidth]{./figs/schemas/train.png}%
+    \includegraphics<2>[width=.8\textwidth]{./figs/schemas/good_fit.png}%
+    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/bad_test.png}%
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Biases in the train set - autocorrelation}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1->[width=.2\textwidth]{example-image-a}%
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1>[width=.8\textwidth]{./figs/schemas/train.png}%
+    \includegraphics<2>[width=.8\textwidth]{./figs/schemas/autocorr_test.png}%
+    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/autocorr.png}%
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Unbalanced data}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1->[width=.8\textwidth]{./figs/plantnet_longtail.png}%
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1>[width=.8\textwidth]{./figs/schemas/unbalanced.png}%
+    \includegraphics<2>[width=.8\textwidth]{./figs/schemas/unb_tight.png}%
+    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/unb_tight_test_unb.png}%
+    \includegraphics<4>[width=.8\textwidth]{./figs/schemas/test_unb_bad.png}%
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Deal with unbalanced data}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \begin{itemize}
+                \item<1-> Oversample ?
+                \item<4-> Undersample/saturate ?
+                \item<5-> Adapt loss ?
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1>[width=.8\textwidth]{./figs/schemas/oversampled.png}%
+    \includegraphics<2>[width=.8\textwidth]{./figs/schemas/oversampled_fit.png}%
+    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/fp.png}%
+    \includegraphics<4>[width=.8\textwidth]{./figs/schemas/undersample.png}%
+    \includegraphics<5>[width=.8\textwidth]{./figs/schemas/undersample.png}%
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Deal with lack of data}
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+            \begin{itemize}
+                \item<1-> Data augmentation
+                \item<3-> Pretrained model
+                \item<4> \textbf{... collect more data}
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5\linewidth}
+            \centering
+    \includegraphics<1>[width=.8\textwidth]{./figs/schemas/train.png}%
+    \includegraphics<2>[width=.8\textwidth]{./figs/schemas/data_aug.png}%
+    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/oversampled_fit.png}%
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \section{How to sample and evaluate ?}
