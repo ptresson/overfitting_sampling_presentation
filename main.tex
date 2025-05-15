@@ -161,11 +161,6 @@
     \only<3>{\textbf{(bad) training data}}
 \end{frame}
 
-\begin{frame}{}
-    \centering
-    \textbf{Need to be very carefull on how to evaluate}
-\end{frame}
-
 
 \section{Illustrated examples in Ecology}
 
@@ -253,7 +248,7 @@
             \begin{itemize}
                 \item<1-> Oversample ?
                 \item<4-> Undersample/saturate ?
-                \item<5-> Adapt loss ?
+                \item<7-> Adapt loss ?
             \end{itemize}
         \end{column}
         \begin{column}{.5\linewidth}
@@ -262,7 +257,9 @@
     \includegraphics<2>[width=.8\textwidth]{./figs/schemas/oversampled_fit.png}%
     \includegraphics<3>[width=.8\textwidth]{./figs/schemas/fp.png}%
     \includegraphics<4>[width=.8\textwidth]{./figs/schemas/undersample.png}%
-    \includegraphics<5>[width=.8\textwidth]{./figs/schemas/undersample.png}%
+    \includegraphics<5>[width=.8\textwidth]{./figs/schemas/undersample_fit.png}%
+    \includegraphics<6>[width=.8\textwidth]{./figs/schemas/fn.png}%
+    \includegraphics<7>[width=.8\textwidth]{./figs/schemas/adapt_loss.png}%
         \end{column}
     \end{columns}
 \end{frame}
@@ -280,15 +277,33 @@
             \centering
     \includegraphics<1>[width=.8\textwidth]{./figs/schemas/train.png}%
     \includegraphics<2>[width=.8\textwidth]{./figs/schemas/data_aug.png}%
-    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/oversampled_fit.png}%
+    \includegraphics<3>[width=.8\textwidth]{./figs/schemas/pretrained.png}%
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}{}
+    \centering
+    \textbf{Need to be very carefull on how to evaluate}
 \end{frame}
 
 \section{How to sample and evaluate ?}
 
 \begin{frame}{Random split ?}
+    \begin{center}
+    \textcolor{black}{"random split training validation 80/20"}
+    \end{center}
+
+    \pause
     
+        \centering
+        \vspace{-0.5cm}
+            \fbox{\includegraphics[width=.7\paperwidth,]{./figs/random_sampling.png}}
+
+            \cite{oquab2023dinov2}
+    
+    \pause
+    Works for huge DL papers, maybe not for you
 \end{frame}
 
 \begin{frame}{Cross-validation}
